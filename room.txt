@@ -1,0 +1,55 @@
+Living Room
+The small living room contains a couch, coffee table, and two
+armchairs. Pictures of various cousins adorn the walls along
+with two of your aunt's wretched attempts at oil painting. You
+can't help but notice that the carpet could use a good
+vacuuming.
+
+Doorways lead west to your father's office, north to your bedroom, and east to the kitchen.
+#
+
+Bedroom
+This is your domain and has been since your family moved here
+when you were six. A nightstand with a Superman lamp sits next
+to your twin bed. Posters of various anime characters cover one
+wall. A pile of laundry, slowly but surely attaining sentience,
+occupies the far corner.
+
+The door to the attic is in the ceiling above the pile of clothes. You can return south to the living room.
+#
+
+Office
+This is your father's office where he spends most of his days and
+nights at. Around the room are clutters of papers, books, and miscellaneous items.
+On your right is a large bookcase, and a few of the books are on the floor
+beneath it. On your left is a window that spans the dark night outside.
+In the middle is a desk with a single paper on it.
+
+#
+
+Kitchen
+You're now in your kitchen-- one of your favorite places in the house. You can remember
+your mom cooking you pancakes this morning, having overflowed your plate with syrup.
+The fridge is slightly ajar, the light illuminating the area around it. In the sink are
+stacks of dishes, and a plate is broken near the cabinet. There are many cupboards.
+
+The only way is back is through the living room.
+#
+
+Attic
+After climbing the ladder from your room, you find yourself in the attic. It's old and dusty and you can't rememeber
+the last time you were in here. There's many boxes, some labeled with other rooms of the house, and others
+peoples names such as "Mom" and "Dad." There's also some old furniture, toys, and even a creepy mannequin.
+
+Below is the hatch back to your humble abode.
+
+#
+
+Garage
+The garage contains an old beat up 2009 Toyota Camry, a tool rack, and a few cinderblocks and pieces of wood.
+There isn't much in the room, but it's quite cold. You can recall during the summertime when your older brother
+would work on the car while you sat and learned from him. A few of the tools are not in their normal spots.
+
+You can either return to the Living Room or your Bedroom. 
+
+#
