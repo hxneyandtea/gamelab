@@ -1,4 +1,4 @@
-public class Flashlight {
+public class Flashlight extends Item{
 
 	private boolean foundKey;
 	
@@ -16,7 +16,7 @@ public class Flashlight {
 			Game.print("You turn on the flashlight and start searching for"
 					+ "clues and hidden treasure. Instead, you find the office"
 					+ "key hidden under the bed.");
-			Game.current.setItem(new OfficeKey());
+			Game.current.setItem(new Item("officekey"));
 			foundKey = true;
 			}
 	} else

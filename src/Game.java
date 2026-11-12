@@ -58,6 +58,7 @@ public class Game {
 			current.removeItem(itemName);
 			Game.print("You have taken the " + item.getItem());
 		}
+		}
 
 	
 	public static void runGameGUI(String command) {
@@ -132,14 +133,14 @@ public class Game {
 	        	}
 	        	}
 	        	break;
-	        	
-	      	default:
+	     
+	        default:
 	            print("Invalid command.");
-	            return;
+	            break;
 	    }
-
+	}
 	    // Display the room after the command
-	    print(current);
+	    print(current.);
 	}
 	
 	public static void print(Object obj) {
