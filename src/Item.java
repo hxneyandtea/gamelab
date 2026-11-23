@@ -1,10 +1,10 @@
 import java.io.Serializable;
 
 public class Item implements Serializable  {
-	private String item;
+	protected String item;
 	
 	public Item(String i) {
-		item = i;
+		this.item = i;
 	}
 
 	public String getItem() {
@@ -23,7 +23,25 @@ public class Item implements Serializable  {
 		return item;
 	}
 
-	public void use() {
+	public boolean canTake() {
+		return true;
+	}
+	
+	public void useItem() {
 		Game.print("You cannot use this item");
 		}
+	
+	public void openItem() {
+		Game.print("You cannot open the" + item);
+	}
+	
+	public void closeItem() {
+		Game.print("You cannot close the" + item);
+	}
+	
+	public void readItem() {
+		Game.print("You cannot read the " + item);
+	}
+
+
 }

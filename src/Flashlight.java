@@ -5,10 +5,13 @@ public class Flashlight extends Item{
 	public Flashlight() {
 		super("flashlight");
 		foundKey = false;
-		
+	}
+	
+	public boolean isnotHeavy() {
+			return true;
 	}
 	@Override
-	public void use() {
+	public void useItem() {
 		if(Game.current.getName().equals("Bedroom")) {
 			if(foundKey)
 				Game.print("You search and search but find nothing else useful");
@@ -21,5 +24,5 @@ public class Flashlight extends Item{
 			}
 	} else
 		Game.print("You turn the flashlight on and off for shits and giggles.");
-
+	}
 }

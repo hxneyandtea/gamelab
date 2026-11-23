@@ -8,12 +8,13 @@ public class Room implements Serializable {
 	private HashMap<String, Item> item;
 	private static HashMap<String, Room> rooms;
 	private boolean isLocked = false;
-	
+	private HashMap<String, NPC> npcs;
 	
 	public Room(String n) {
 		name = n;
 		r = new Room[6];
 		item = new HashMap<>();
+		npcs = new HashMap<>();
 		World.savedRoom.add(this);
 	}
 	
@@ -68,6 +69,15 @@ public class Room implements Serializable {
 		this.isLocked = isLocked;
 	}
 
+	public void addNPC(NPC n) {
+		npcs.put(n.getName(), n);
+	}
 	
+	public NPC getNPC(String n) {
+		return npcs.get(n);
+	}
 	
+	public void removeNPC(NPC n) {
+		npcs.remove(n);
+	}
 }	

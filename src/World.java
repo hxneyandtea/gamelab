@@ -28,7 +28,7 @@ public class World {
 	    Item mysteriousorb = new Item("mysteriousorb");
 	    Item couch = new Item("couch");
 	    Item bed = new Item("bed");
-	    
+	  
 	    
         livingRoom.addExit(kitchen,0); //
         livingRoom.addExit(office, 1);
@@ -58,6 +58,9 @@ public class World {
         office.setisLocked(true);
         attic.setisLocked(true);
         garage.setisLocked(true);
+        
+        kitchen.addNPC(new Maple());
+        livingRoom.addNPC(new Bobo());
         
 	    return livingRoom;
 	}

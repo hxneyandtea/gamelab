@@ -17,7 +17,8 @@ public class Game {
 	public static ArrayList<Item> inventory = new ArrayList<>();
 	public static HashMap<String, String> rooms = new HashMap<>();
 	public static TextAdventureGUI gui;
-	public static Room current;	
+	public static Room current;
+	
 
 	public static void printFile() {
 	    try {
@@ -48,14 +49,18 @@ public class Game {
 	    }
 	}
 	
-	public static void takeItem(String itemName) {
-		Item item = current.getItem(itemName);
+	
+	public static void takeItem(String name) {
+		Item item = current.getItem(name);
 		
 		if(item == null) {
-			Game.print("There is not an item.");
+			Game.print("There is no such item.");
+		} else if (!item.canTake()) {
+			Game.print("The " + item.getName() + " is too heavy to take.");
+			
 		} else {
 			inventory.add(item);
-			current.removeItem(itemName);
+			current.removeItem(name);
 			Game.print("You have taken the " + item.getItem());
 		}
 		}
@@ -126,23 +131,101 @@ public class Game {
 	        	break;
 	        	
 	        case "use":
-	        	if (command.length() == 1) {
+	        	if (words.length < 2) {
 	        		print("Use what?");
-	        	} else {
-	        		useItem(item.getItem());
-	        	}
+	        	}else {
+	        		useItem(words[1]);
 	        	}
 	        	break;
 	     
+	        case "open":
+	        	if (words.length < 2) {
+	        		print("Open what?");
+	        	} else {
+	        		openItem(words[1]);
+	        	}
+	        	break;
+	        	
+	        case "close":
+	        	if (words.length < 2) {
+	        		print("Close what?");
+	        	} else {
+	        		closeItem(words[1]);
+	        	}
+	        	break;
+	        	
+	        case "read":
+	        	if (words.length < 2) {
+	        		print("Read what?");
+	        	} else {
+	        	readItem(words[1]);
+	        	}
+	        	break;
+	        
+	        case "talk":
+	        	if (words.length < 2) {
+	        		print("Talk to who exactly?");
+	        	
+	        	} else if
+	        		(words[1].equals("to")) {
+	        			talkTo(words[2]);
+	        			
+	        	} else {
+	        		talkTo(words[1]);
+	        	break;
+	        	}
+	        	
 	        default:
 	            print("Invalid command.");
 	            break;
 	    }
-	}
-	    // Display the room after the command
-	    print(current.);
+	    print(current);
 	}
 	
+
+	public static Item findItem(String name) {
+		for(Item i : inventory)
+			if(i.getName().equals(name))
+				return current.getItem(name);
+		return null;
+	}
+		
+	private static void useItem(String name) {
+		Item i = findItem(name);
+			if (i == null) {
+				print("You do not see the" + i + "here.");
+			} else {
+				i.useItem();
+			}
+	}
+	
+	private static void openItem(String name) {
+		Item i = findItem(name);
+		if (i == null) {
+			print("You do not see the" + i + "here.");
+		} else {
+			i.openItem();
+		}
+}
+
+		
+	private static void closeItem(String name) {
+		Item i = findItem(name);
+		if (i == null) {
+			print("You do not see the" + i + "here.");
+		} else {
+			i.closeItem();
+		}
+	}
+	private static void readItem(String name) {
+		Item i = findItem(name);
+		if (i == null) {
+			print("You do not see the" + i + "here.");
+		} else {
+			i.readItem();
+		}
+	}
+		
 	public static void print(Object obj) {
 	    if (gui != null) {
 	        gui.output(String.valueOf(obj));
@@ -207,6 +290,15 @@ public class Game {
 		inputStream.close();
 		} catch (Exception ex) {
 			ex.printStackTrace();
+		}
+	}
+
+	public static void talkTo(String name) {
+		NPC npc = current.getNPC(name);
+		if (npc == null) {
+			Game.print("There is no one named " + name + " here.");
+		} else {
+			npc.talk();
 		}
 	}
 }
